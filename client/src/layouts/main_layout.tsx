@@ -5,7 +5,7 @@ import Header from "../components/header";
 const MainLayout = () => (
   <>
     <Header />
-    <main className="p-6" style={{ flex: "1" }}>
+    <main className="p-6">
       <Outlet />
     </main>
     <Footer />
