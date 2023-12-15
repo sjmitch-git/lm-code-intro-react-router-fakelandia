@@ -1,3 +1,19 @@
-const Nav: React.FC = () => <nav>!Nav</nav>;
+import { NavLink } from "react-router-dom";
+
+const Nav: React.FC = () => (
+  <nav>
+    <ul className="nav">
+      <li>
+        <NavLink to="/">Home</NavLink>
+      </li>
+      <li>
+        <NavLink to="/confession">Confession</NavLink>
+      </li>
+      <li>
+        <NavLink to="/misdemeanour">Misdemeanour</NavLink>
+      </li>
+    </ul>
+  </nav>
+);
 
 export default Nav;
