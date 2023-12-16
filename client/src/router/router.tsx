@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Home from "../pages/home";
 import Confession from "../pages/confession";
-import Misdemeanour from "../pages/misdemeanour ";
+import Misdemeanour from "../pages/misdemeanour";
 import NotFound from "../pages/notfound";
 import MainLayout from "../layouts/main_layout";
 

@@ -9,9 +9,12 @@ const Nav: React.FC = () => {
   };
 
   return (
-    <nav className="container mx-auto relative min-h-[1.5rem] flex flex-col">
+    <nav className="container mx-auto relative min-h-[1.5rem] flex flex-col" data-testid="nav">
       <div className="text-white font-bold text-xl md:text-3xl">Fakelandia J.D.</div>
-      <ul className={`gap-4 lg:flex flex-col lg:flex-row ${isMenuOpen ? "flex" : "hidden"}`}>
+      <ul
+        className={`gap-4 lg:flex flex-col mt-4 lg:flex-row ${isMenuOpen ? "flex" : "hidden"}`}
+        data-testid="menu"
+      >
         <li>
           <NavLink to="/">Home</NavLink>
         </li>
@@ -26,6 +29,7 @@ const Nav: React.FC = () => {
       <button
         className="lg:hidden text-white focus:outline-none absolute right-0 top-0"
         onClick={toggleMenu}
+        data-testid="menubutton"
       >
         <svg
           className="h-6 w-6"

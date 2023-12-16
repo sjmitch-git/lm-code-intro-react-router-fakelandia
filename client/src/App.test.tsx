@@ -1,9 +1,18 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe("App component", () => {
+  it("should render with header, main, and footer sections", () => {
+    const { container } = render(<App />);
+
+    const header = container.querySelector("header");
+    expect(header).toBeInTheDocument();
+
+    const main = container.querySelector("main");
+    expect(main).toBeInTheDocument();
+
+    const footer = container.querySelector("footer");
+    expect(footer).toBeInTheDocument();
+  });
 });

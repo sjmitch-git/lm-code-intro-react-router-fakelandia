@@ -4,7 +4,7 @@ import SEO from "../components/seo";
 
 const title = "Welcome to the Justice Department of Fakelandia";
 const description =
-  "Here you can browse a list of recent misdemenours committed by our citizens, or you can confess to your own misdemenour.";
+  "Here you can browse a list of recent misdemeanours committed by our citizens, or you can confess to your own misdemeanour.";
 
 const Home: React.FC = () => (
   <>

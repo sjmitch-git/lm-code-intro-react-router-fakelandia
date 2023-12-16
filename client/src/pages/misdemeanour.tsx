@@ -3,7 +3,7 @@ import Description from "../components/description";
 import SEO from "../components/seo";
 
 const title = "Misdemeanour!";
-const description = "Here you can browse a list of recent misdemenours committed by our citizens.";
+const description = "Here you can browse a list of recent misdemeanours committed by our citizens.";
 
 const Misdemeanour: React.FC = () => (
   <>

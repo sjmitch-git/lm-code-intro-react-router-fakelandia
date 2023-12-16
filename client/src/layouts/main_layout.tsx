@@ -5,7 +5,7 @@ import Header from "../components/header";
 const MainLayout = () => (
   <div className="flex flex-col min-h-screen">
     <Header />
-    <main className="flex-grow p-4">
+    <main className="flex-grow p-4" data-testid="main">
       <article className="container mx-auto">
         <Outlet />
       </article>
