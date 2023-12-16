@@ -1,7 +1,7 @@
 import Nav from "./nav";
 
 const Header: React.FC = () => (
-  <header>
+  <header className="bg-gray-800 text-white p-4">
     <Nav />
   </header>
 );
