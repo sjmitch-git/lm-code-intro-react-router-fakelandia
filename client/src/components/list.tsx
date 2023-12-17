@@ -1,6 +1,7 @@
 import { useFetch } from "../hooks/use_fetch";
 import { Misdemeanour } from "../types/misdemeanours.types";
 import ListItem from "./list_item";
+import Loading from "./loading";
 
 interface listProps {
   amount?: number;
@@ -18,7 +19,7 @@ const List: React.FC<listProps> = ({ amount = 20, filter }) => {
   return (
     <>
       {loading ? (
-        <p>Loading...</p>
+        <Loading message="Fetching Data" />
       ) : error ? (
         <p>{error.message}</p>
       ) : (
