@@ -3,7 +3,7 @@ import Description from "../components/description";
 import List from "../components/list";
 import SEO from "../components/seo";
 import ResultsControl from "../components/results_control";
-// import FiltersControl from "./FiltersControl";
+import FilterControl from "../components/filter_control";
 import { MisdemeanourProvider } from "../contexts/MisdemeanourContext";
 
 const title = "Misdemeanour!";
@@ -17,7 +17,8 @@ const Misdemeanour: React.FC = () => (
     <Description description={description} />
 
     <div className="grid lg:grid-cols-4 gap-8">
-      <aside className="">
+      <aside className="flex gap-4 flex-col lg:justify-start">
+        <FilterControl />
         <ResultsControl />
       </aside>
       <div className="lg:col-span-3">

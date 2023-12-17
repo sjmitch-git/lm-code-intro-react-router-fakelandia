@@ -4,13 +4,9 @@ import ListItem from "./list_item";
 import Loading from "./loading";
 import { useMisdemeanourContext } from "../contexts/MisdemeanourContext";
 
-interface listProps {
-  filter?: string;
-}
-
-const List: React.FC<listProps> = ({ filter }) => {
-  const { resultsCount } = useMisdemeanourContext();
-  console.log("amount", resultsCount);
+const List: React.FC = () => {
+  const { resultsCount, filter } = useMisdemeanourContext();
+  console.log("filter", filter);
   const { data, loading, error } = useFetch<{ misdemeanours: Misdemeanour[] }>(
     `http://localhost:8080/api/misdemeanours/${resultsCount}`
   );
@@ -26,15 +22,23 @@ const List: React.FC<listProps> = ({ filter }) => {
         <p className="text-center text-danger text-3xl">{error.message}</p>
       ) : (
         <div className="border border-gray-400">
-          <div className="border-b border-gray-400 grid grid-cols-2 md:grid-cols-4 p-2">
-            <p>Citizen ID</p>
-            <p>Date</p>
-            <p>Misdemeanour</p>
-            <p>Punishment</p>
-          </div>
-          {filteredData.map((item) => (
-            <ListItem key={item.citizenId} item={item} />
-          ))}
+          {filteredData.length === 0 ? (
+            <p className="text-center text-2xl my-4">
+              {filter ? "No Results. Reset filter." : "No Results."}
+            </p>
+          ) : (
+            <>
+              <div className="border-b border-gray-400 grid grid-cols-2 md:grid-cols-4 p-2">
+                <p>Citizen ID</p>
+                <p>Date</p>
+                <p>Misdemeanour</p>
+                <p>Punishment</p>
+              </div>
+              {filteredData.map((item) => (
+                <ListItem key={item.citizenId} item={item} />
+              ))}
+            </>
+          )}
         </div>
       )}
     </>

@@ -3,21 +3,21 @@ import React, { createContext, useContext, useState } from "react";
 interface MisdemeanourContextProps {
   resultsCount: number;
   setResultsCount: React.Dispatch<React.SetStateAction<number>>;
-  filters: string[];
-  setFilters: React.Dispatch<React.SetStateAction<string[]>>;
+  filter: string | null;
+  setFilter: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
 const MisdemeanourContext = createContext<MisdemeanourContextProps | undefined>(undefined);
 
 export const MisdemeanourProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [resultsCount, setResultsCount] = useState<number>(10);
-  const [filters, setFilters] = useState<string[]>([]);
+  const [filter, setFilter] = useState<string | null>(null);
 
   const contextValue = {
     resultsCount,
     setResultsCount,
-    filters,
-    setFilters,
+    filter,
+    setFilter,
   };
 
   return (
