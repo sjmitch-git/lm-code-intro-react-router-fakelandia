@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
-interface fetchProps<Data> {
+export interface FetchProps<Data> {
   data: Data | null;
   loading: boolean;
   error: Error | null;
 }
 
-export function useFetch<Data>(url: string): fetchProps<Data> {
+export function useFetch<Data>(url: string): FetchProps<Data> {
   const [data, setData] = useState<Data | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<Error | null>(null);

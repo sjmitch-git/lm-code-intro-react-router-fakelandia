@@ -25,7 +25,8 @@ const ListItem: React.FC<ListItemProps> = ({ item }) => {
 
       {misdemeanorInfo && (
         <p>
-          {misdemeanorInfo.description} {misdemeanorInfo.emoji}
+          {misdemeanorInfo.description}{" "}
+          <span className="block text-3xl">{misdemeanorInfo.emoji}</span>
         </p>
       )}
 
