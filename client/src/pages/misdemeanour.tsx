@@ -1,5 +1,6 @@
 import Title from "../components/title";
 import Description from "../components/description";
+import List from "../components/list";
 import SEO from "../components/seo";
 
 const title = "Misdemeanour!";
@@ -11,6 +12,8 @@ const Misdemeanour: React.FC = () => (
 
     <Title title={title} />
     <Description description={description} />
+
+    <List />
   </>
 );
 
