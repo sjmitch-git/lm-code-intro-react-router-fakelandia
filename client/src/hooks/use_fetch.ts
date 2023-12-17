@@ -13,6 +13,7 @@ export function useFetch<Data>(url: string): FetchProps<Data> {
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       try {
         const response = await fetch(url);
 
@@ -32,7 +33,7 @@ export function useFetch<Data>(url: string): FetchProps<Data> {
         setLoading(false);
       }
     };
-
+    setData(null);
     fetchData();
   }, [url]);
 

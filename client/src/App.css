@@ -1,5 +1,28 @@
 @import "tailwindcss/base";
+@import "./css/variables.css";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import "./css/utilities.css";
-@import "./css/variables.css";
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 4px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  border-radius: 4px;
+}
+
+.btn.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+input[type="radio"] {
+  position: absolute;
+  left: -9999px;
+}
