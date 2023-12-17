@@ -9,3 +9,9 @@ export type Misdemeanour = {
   misdemeanour: MisdemeanourKind;
   date: string;
 };
+
+export type MisdemeanourInfo = {
+  name: string;
+  description: string;
+  emoji: string;
+};

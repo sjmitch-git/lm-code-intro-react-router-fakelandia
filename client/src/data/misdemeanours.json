@@ -1,0 +1,22 @@
+[
+  {
+    "name": "rudeness",
+    "description": "Mild Public Rudeness",
+    "emoji": "🤪"
+  },
+  {
+    "name": "lift",
+    "description": "Speaking in a Lift",
+    "emoji": "🗣"
+  },
+  {
+    "name": "vegetables",
+    "description": "Not Eating Your Vegetables",
+    "emoji": "🥗"
+  },
+  {
+    "name": "united",
+    "description": "Supporting Manchester United",
+    "emoji": "😈"
+  }
+]
