@@ -28,7 +28,7 @@ const FilterControl: React.FC = () => {
           {option}
         </label>
       ))}
-      <button className={`btn ${!filter ? "!hidden" : ""}`} onClick={clearFilter}>
+      <button className={`btn-link text-info ${!filter ? "!hidden" : ""}`} onClick={clearFilter}>
         Clear Filter
       </button>
     </div>

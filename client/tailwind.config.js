@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        theme: "var(--theme-color)",
         primary: "var(--primary-color)",
         secondary: "var(--secondary-color)",
         accent: "var(--accent-color)",
@@ -20,5 +21,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };

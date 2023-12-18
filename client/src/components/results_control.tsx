@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { useMisdemeanourContext } from "../contexts/MisdemeanourContext";
 
 const ResultsControl: React.FC = () => {

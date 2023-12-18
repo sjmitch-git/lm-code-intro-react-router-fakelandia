@@ -6,7 +6,6 @@ import { useMisdemeanourContext } from "../contexts/MisdemeanourContext";
 
 const List: React.FC = () => {
   const { resultsCount, filter } = useMisdemeanourContext();
-  console.log("filter", filter);
   const { data, loading, error } = useFetch<{ misdemeanours: Misdemeanour[] }>(
     `http://localhost:8080/api/misdemeanours/${resultsCount}`
   );

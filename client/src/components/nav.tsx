@@ -23,11 +23,12 @@ const Nav: React.FC = () => {
         <li>
           <NavLink to="/">Home</NavLink>
         </li>
+
         <li>
-          <NavLink to="/confession">Confession</NavLink>
+          <NavLink to="/misdemeanour">Misdemeanours</NavLink>
         </li>
         <li>
-          <NavLink to="/misdemeanour">Misdemeanour</NavLink>
+          <NavLink to="/confession">Confess To Us</NavLink>
         </li>
       </ul>
 
