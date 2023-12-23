@@ -4,9 +4,10 @@ const Footer: React.FC = () => (
       <p>&copy; 2023 Stephen</p>
       <a
         href="https://github.com/sjmitch-git/lm-code-intro-react-router-fakelandia"
+        rel="noreferrer"
         target="_blank"
       >
-        GitHub Code
+        <code>Code on GitHub</code>
       </a>
     </div>
   </footer>

@@ -11,14 +11,14 @@ const Home: React.FC = () => (
   <>
     <SEO title={title} description={description} />
 
-    <Title title={title} className="text-center" />
+    <Title title={title} className="text-center mx-auto" />
     <Description description={description} className="text-center mx-auto mb-24" />
 
     <nav className="flex justify-center gap-8">
-      <NavLink to="/misdemeanour" className="btn bg-primary text-light">
+      <NavLink to="/misdemeanour" className="btn bg-primary text-light uppercase">
         Misdemeanours
       </NavLink>
-      <NavLink to="/confession" className="btn bg-primary text-light">
+      <NavLink to="/confession" className="btn bg-primary text-light uppercase">
         Confess To Us
       </NavLink>
     </nav>

@@ -1,6 +1,7 @@
 import { Outlet, useLocation } from "react-router";
 import Footer from "../components/footer";
 import Header from "../components/header";
+import Background from "../assets/images/mountains.jpg";
 
 const MainLayout = () => {
   const location = useLocation();
@@ -8,9 +9,7 @@ const MainLayout = () => {
   const isHomePage = location.pathname === "/";
 
   const mainStyle = {
-    backgroundImage: isHomePage
-      ? "url(https://images.unsplash.com/photo-1552152370-fb05b25ff17d?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"
-      : "none",
+    backgroundImage: isHomePage ? `url(${Background})` : "none",
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",

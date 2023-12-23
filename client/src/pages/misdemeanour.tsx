@@ -16,8 +16,8 @@ const Misdemeanour: React.FC = () => (
     <Title title={title} />
     <Description description={description} />
 
-    <div className="grid lg:grid-cols-4 gap-8">
-      <aside className="flex gap-4 flex-col lg:justify-start">
+    <div className="grid lg:grid-cols-4 gap-4 lg:gap-8">
+      <aside className="flex gap-8 flex-col lg:justify-start">
         <FilterControl />
         <ResultsControl />
       </aside>

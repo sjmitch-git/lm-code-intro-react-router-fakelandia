@@ -7,21 +7,34 @@ const ResultsControl: React.FC = () => {
     setResultsCount(newAmount);
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent, newAmount: number) => {
+    if (event.code === "Enter") {
+      handleAmountChange(newAmount);
+    }
+  };
+
   return (
     <div>
-      <h3>Set number of results:</h3>
-      {[1, 5, 10, 20, 50].map((option) => (
-        <label key={option} className={`btn ${resultsCount === option ? "active" : ""}`}>
-          <input
-            type="radio"
-            name="amount"
-            value={option}
-            checked={resultsCount === option}
-            onChange={() => handleAmountChange(option)}
-          />
-          {option}
-        </label>
-      ))}
+      <h3 className="mb-2">Set number of results:</h3>
+      <div className="flex gap-2 flex-wrap">
+        {[1, 5, 10, 20, 50].map((option) => (
+          <label
+            key={option}
+            className={`btn ${resultsCount === option ? "active" : ""}`}
+            tabIndex={0}
+            onKeyDown={(event) => handleKeyDown(event, option)}
+          >
+            <input
+              type="radio"
+              name="amount"
+              value={option}
+              checked={resultsCount === option}
+              onChange={() => handleAmountChange(option)}
+            />
+            {option}
+          </label>
+        ))}
+      </div>
     </div>
   );
 };

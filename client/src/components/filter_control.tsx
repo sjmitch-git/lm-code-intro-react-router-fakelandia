@@ -9,28 +9,42 @@ const FilterControl: React.FC = () => {
     setFilter(newFilter);
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent, newFilter: string) => {
+    if (event.code === "Enter") {
+      handleFilterChange(newFilter);
+    }
+  };
+
   const clearFilter = () => {
     setFilter(null);
   };
 
   return (
     <div>
-      <h3>Filter by misdemeanour:</h3>
-      {filters.map((option) => (
-        <label key={option} className={`btn capitalize ${filter === option ? "active" : ""}`}>
-          <input
-            type="radio"
-            name="filter"
-            value={option}
-            checked={filter === option}
-            onChange={() => handleFilterChange(option)}
-          />
-          {option}
-        </label>
-      ))}
-      <button className={`btn-link text-info ${!filter ? "!hidden" : ""}`} onClick={clearFilter}>
-        Clear Filter
-      </button>
+      <h3 className="mb-2">Filter by misdemeanour:</h3>
+      <div className="flex gap-2 flex-wrap">
+        {filters.map((option) => (
+          <label
+            key={option}
+            className={`btn capitalize ${filter === option ? "active" : ""}`}
+            tabIndex={0}
+            onKeyDown={(event) => handleKeyDown(event, option)}
+          >
+            <input
+              type="radio"
+              name="filter"
+              value={option}
+              checked={filter === option}
+              tabIndex={1}
+              onChange={() => handleFilterChange(option)}
+            />
+            {option}
+          </label>
+        ))}
+        <button className={`btn-link text-info ${!filter ? "!hidden" : ""}`} onClick={clearFilter}>
+          Clear Filter
+        </button>
+      </div>
     </div>
   );
 };

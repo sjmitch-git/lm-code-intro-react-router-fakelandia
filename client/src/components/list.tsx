@@ -20,9 +20,9 @@ const List: React.FC = () => {
       ) : error ? (
         <p className="text-center text-danger text-3xl">{error.message}</p>
       ) : (
-        <div className="border border-gray-400">
+        <div className="border border-gray-400 mb-12">
           {filteredData.length === 0 ? (
-            <p className="text-center text-2xl my-4">
+            <p className="text-center text-warning text-2xl my-4">
               {filter ? "No Results. Reset filter." : "No Results."}
             </p>
           ) : (
