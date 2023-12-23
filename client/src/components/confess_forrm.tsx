@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import SubjectControls from "./subject_controls";
 import ContactControls from "./contact_controls";
+import DetailsControls from "./details_controls";
 import FormAction from "./form_action";
 
 const ConfessForm: React.FC = () => {
@@ -23,13 +24,14 @@ const ConfessForm: React.FC = () => {
   return (
     <>
       <form
-        className="flex flex-col gap-4 m-auto bg-grey-100 p-4 border border-gray-400 border-r-2"
+        className="flex flex-col gap-4 m-auto bg-grey-100 p-4 border border-gray-200"
         ref={formRef}
         onChange={handleFormChange}
         onSubmit={handleSubmit}
       >
         <SubjectControls />
         <ContactControls />
+        <DetailsControls />
         <FormAction isFormValid={isFormValid} label="Confess" />
       </form>
     </>

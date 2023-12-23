@@ -1,12 +1,14 @@
-import { MISDEMEANOURS } from "../types/misdemeanours.types";
+import { MISDEMEANOURS, JUST_TALK } from "../types/misdemeanours.types";
 import Label from "./atoms/label";
 import Select from "./atoms/select";
 
+const options = [...MISDEMEANOURS, JUST_TALK] as const;
+console.log(options);
 const ContactControls: React.FC = () => {
   return (
     <>
-      <Label label="Reason for contact:">
-        <Select name="reason" options={MISDEMEANOURS} value="" required={true} />
+      <Label label="Reason:">
+        <Select name="reason" options={options} value="" required={true} />
       </Label>
     </>
   );

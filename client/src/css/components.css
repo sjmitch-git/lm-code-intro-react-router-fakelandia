@@ -2,7 +2,7 @@
 
 @layer components {
   .btn {
-    @apply py-2 px-4 font-semibold uppercase rounded-lg shadow-md cursor-pointer tracking-wider;
+    @apply py-2 px-4 font-semibold uppercase rounded-lg border border-gray-200 cursor-pointer tracking-wider;
 
     &:focus {
       @apply outline-none ring-2 ring-[--accent-color] ring-opacity-75;

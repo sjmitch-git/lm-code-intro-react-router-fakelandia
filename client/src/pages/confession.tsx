@@ -15,7 +15,7 @@ const Confession: React.FC = () => (
 
     <div className="grid lg:grid-cols-6 gap-8">
       <aside className="flex gap-4 flex-col lg:justify-start lg:col-span-3 lg:order-last">
-        <ul className="max-w-prose list-disc lg:text-lg lg:ml-4">
+        <ul className="max-w-prose list-disc lg:text-lg ml-4">
           <li className="mb-4">
             It's very difficult to catch people committing misdemeanours so we appreciate it when
             citizens confess to us directly.
