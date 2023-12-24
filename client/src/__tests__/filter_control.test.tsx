@@ -1,4 +1,3 @@
-import "./setupTests";
 import { render, fireEvent, waitFor } from "@testing-library/react";
 import { MisdemeanourProvider } from "../contexts/MisdemeanourContext";
 import FilterControl from "../components/filter_control";

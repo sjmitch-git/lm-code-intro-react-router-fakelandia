@@ -20,7 +20,9 @@ describe("Router component", () => {
       </MemoryRouter>
     );
 
-    const confessionElement = screen.getByText("Confession!");
+    const confessionElement = screen.getByText(
+      "Use this page to confess to your own misdemeanour."
+    );
     expect(confessionElement).toBeInTheDocument();
 
     render(
@@ -29,7 +31,9 @@ describe("Router component", () => {
       </MemoryRouter>
     );
 
-    const misdemenourElement = screen.getByText("Misdemeanour!");
+    const misdemenourElement = screen.getByText(
+      "Here you can browse a list of recent misdemeanours committed by our citizens."
+    );
     expect(misdemenourElement).toBeInTheDocument();
 
     render(

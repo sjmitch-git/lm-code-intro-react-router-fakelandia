@@ -6,8 +6,8 @@ describe("Misdemeanour component", () => {
   it("renders the Misdemeanour component with Title and Description", () => {
     render(<Misdemeanour />);
 
-    const titleElement = screen.getByText("Misdemeanour!");
-    expect(titleElement).toBeInTheDocument();
+    const h1Element = screen.getByTestId("title");
+    expect(h1Element).toHaveTextContent(/Misdemeanours/i);
 
     const descriptionElement = screen.getByText(
       "Here you can browse a list of recent misdemeanours committed by our citizens."

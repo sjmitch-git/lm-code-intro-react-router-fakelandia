@@ -1,4 +1,4 @@
-import { render, fireEvent, waitFor } from "@testing-library/react";
+import { render, fireEvent, waitFor, within } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { MemoryRouter } from "react-router-dom";
 import Nav from "../components/nav";
@@ -17,9 +17,9 @@ describe("Nav component", () => {
     const brandText = getByText("Fakelandia J.D.");
     expect(brandText).toBeInTheDocument();
 
-    const homeLink = getByText("Home");
-    const confessionLink = getByText("Confession");
-    const misdemeanorLink = getByText("Misdemeanour");
+    const homeLink = within(navElement).getByText("Home");
+    const confessionLink = within(navElement).getByText("Confess To Us");
+    const misdemeanorLink = within(navElement).getByText("Misdemeanours");
 
     expect(homeLink).toBeInTheDocument();
     expect(confessionLink).toBeInTheDocument();
@@ -27,14 +27,16 @@ describe("Nav component", () => {
   });
 
   it("navigates to the correct route when NavLink is clicked", async () => {
-    const { getByText } = render(
+    const { getByText, getByTestId } = render(
       <MemoryRouter initialEntries={["/"]}>
         <Nav />
       </MemoryRouter>
     );
 
-    const confessionLink = getByText("Confession");
-    const misdemeanorLink = getByText("Misdemeanour");
+    const navElement = getByTestId("nav");
+
+    const confessionLink = within(navElement).getByText("Confess To Us");
+    const misdemeanorLink = within(navElement).getByText("Misdemeanours");
 
     fireEvent.click(confessionLink);
 

@@ -28,7 +28,7 @@ const Button: React.FC<ButtonProps> = ({
   let variantClasses = variants[variant];
   return (
     <button
-      className={`btn ${variantClasses} ${!fullWidth ? "mx-auto" : ""}`}
+      className={`btn ${variantClasses} ${fullWidth ? "" : "mx-auto"}`}
       type={type}
       disabled={disabled}
     >

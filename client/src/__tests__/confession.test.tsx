@@ -6,7 +6,7 @@ describe("Confession component", () => {
   it("renders the Confession component with Title and Description", () => {
     render(<Confession />);
 
-    const titleElement = screen.getByText("Confession!");
+    const titleElement = screen.getByText("Confess To Us");
     expect(titleElement).toBeInTheDocument();
 
     const descriptionElement = screen.getByText(

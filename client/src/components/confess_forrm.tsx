@@ -53,6 +53,7 @@ const ConfessForm: React.FC = () => {
           ref={formRef}
           onChange={handleFormChange}
           onSubmit={handleSubmit}
+          data-testid="confess-form"
         >
           <SubjectControls />
           <ContactControls />

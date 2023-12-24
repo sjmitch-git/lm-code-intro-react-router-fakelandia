@@ -1,10 +1,15 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
+import { MemoryRouter } from "react-router-dom";
 import Home from "../pages/home";
 
 describe("Home component", () => {
   it("renders the Home component with Title and Description", () => {
-    render(<Home />);
+    render(
+      <MemoryRouter initialEntries={["/"]}>
+        <Home />
+      </MemoryRouter>
+    );
 
     const titleElement = screen.getByText("Welcome to the Justice Department of Fakelandia");
     expect(titleElement).toBeInTheDocument();

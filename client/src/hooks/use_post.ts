@@ -46,6 +46,8 @@ const usePost = <T>({ url }: UsePostOptions): UsePostResult<T> => {
 
       const result: T = await res.json();
 
+      setIsLoading(false);
+
       setResponse(result);
     } catch (error) {
       setError(error as Error);
