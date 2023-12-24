@@ -3,7 +3,7 @@ import Label from "./atoms/label";
 import Select from "./atoms/select";
 
 const options = [...MISDEMEANOURS, JUST_TALK] as const;
-console.log(options);
+
 const ContactControls: React.FC = () => {
   return (
     <>

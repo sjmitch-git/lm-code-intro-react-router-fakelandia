@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 interface PostOptions {
   method?: "GET" | "POST" | "PUT" | "DELETE";
@@ -16,41 +16,45 @@ interface UsePostResult<T> {
   response: T | null;
   error: Error | null;
   isLoading: boolean;
+  postData: (data: Record<string, any>, options?: PostOptions) => Promise<void>;
 }
 
-const usePost = <T>({ url, data, options }: UsePostOptions): UsePostResult<T> => {
+const usePost = <T>({ url }: UsePostOptions): UsePostResult<T> => {
   const [response, setResponse] = useState<T | null>(null);
   const [error, setError] = useState<Error | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  useEffect(() => {
-    const postData = async () => {
-      try {
-        const requestOptions: RequestInit = {
-          method: options?.method || "POST",
-          headers: {
-            "Content-Type": "application/json",
-            ...options?.headers,
-          },
-          body: JSON.stringify(data),
-          ...options,
-        };
+  const postData = async (data: Record<string, any>, options?: PostOptions) => {
+    try {
+      setIsLoading(true);
 
-        const res = await fetch(url, requestOptions);
-        const result: T = await res.json();
+      const requestOptions: RequestInit = {
+        method: options?.method || "POST",
+        headers: {
+          "Content-Type": "application/json",
+          ...options?.headers,
+        },
+        body: JSON.stringify(data),
+        ...options,
+      };
 
-        setResponse(result);
-        setIsLoading(false);
-      } catch (error) {
-        setError(error as Error);
-        setIsLoading(false);
+      const res = await fetch(url, requestOptions);
+
+      if (!res.ok) {
+        throw new Error(`HTTP error! Status: ${res.status}`);
       }
-    };
 
-    postData();
-  }, [url, data, options]);
+      const result: T = await res.json();
 
-  return { response, error, isLoading };
+      setResponse(result);
+    } catch (error) {
+      setError(error as Error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return { response, error, isLoading, postData };
 };
 
 export default usePost;
